@@ -160,6 +160,98 @@ body{
 
 
 
+.searchContainer{
+  position: absolute;
+  width: 6.39225vw;
+  height: 6.39225vw;
+  top: 17vw;
+  /* border: 1px solid red; */
+  left: 77vw;
+    z-index: 1;
+}
+
+.searchIconBox{
+  transition: all 0.5s ease;
+  position: relative;
+  border-radius: 50%;
+  background: #ff3700;
+  width: 6.39225vw;
+  height: 6.39225vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 7px -5px 54px 0px rgba(0,0,0,0.27);
+  z-index: 1;
+}
+.searchIconBox:hover{
+  cursor: pointer;
+
+  box-shadow: 7px 0px 54px 0px rgba(50,50,50,0.37);
+}
+.searchIconBox img{
+  width: 3.8256vw;
+}
+
+
+.searchContentContainer{
+  overflow: hidden;
+  transition: all 1s ease;
+  position: absolute;
+  top: 0;
+  right:50%;
+  /* width: 73.898vw; */
+  width: 0;
+  height: 39vw;
+  /* border: 1px solid blue; */
+}
+
+.searchNav{
+  background: linear-gradient(to bottom, rgba(227,227,233,1) 0%, rgba(204,204,204,1) 100%);
+  position: absolute;
+  width: 73.898vw;
+  height: 6.39225vw;
+  top: 0;
+  left: 0;
+  border-top-left-radius: 10vw;
+  border-bottom-left-radius: 10vw;
+  box-shadow: 7px -5px 54px 0px rgba(0,0,0,0.3);
+}
+
+.advancedContainer{
+  overflow: hidden;
+  transition: all 0.5s ease;
+  background: white;
+  position: absolute;
+  left: 3vw;
+  top: 6.2vw;
+  width: 70.86vw;
+  /* height: 5vw; */
+  height: 0;
+}
+
+.advancedButton{
+  transition: all 0.5s ease;
+  position: absolute;
+  width: 9.0556vw;
+  height: 2.13vw;
+  background: #3ad0c8;
+  border: none;
+  font-family: 'Lato-Bold';
+  color: white;
+  font-size: 1.16222vw;
+  right: 3.9225vw;
+  top: 0.5811vw;
+  filter: brightness(1);
+}
+
+.advancedButton:hover{
+  cursor: pointer;
+  filter: brightness(1.15);
+}
+
+
+
+
 header{
   position: relative;
 }
@@ -176,10 +268,21 @@ header{
 }
 
 nav{
+  position: relative;
   background: rgba(0,0,0,0.75);
   display: flex;
   justify-content: space-around;
   padding: 0.94vw 25vw;
+}
+nav::after{
+display: block;
+content: '';
+height: 2px;
+bottom: -2px;
+position: absolute;
+left: 0;
+background: rgba(255,255,255,0.4);
+width: 100%;
 }
 
 nav a{

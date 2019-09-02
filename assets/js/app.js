@@ -1,6 +1,7 @@
 var sliderContainerID = document.getElementById('sliderContainerID');
 var banerHeadingAnimContainer = document.getElementsByClassName('banerHeadingAnimContainer');
 var timeLine = document.getElementsByClassName('timeLine');
+var leftHeading = document.getElementsByClassName('leftHeading');
 
 
 var jsxImage = `<img src="assets/images/banner-slider/${'ce vidimo'}.jpg" alt="">`;
@@ -18,6 +19,12 @@ function createNewElem() {
   console.log(imgNum%6);
 }
 
+var jsxProperty = ['Sell','Rent','Buy'];
+var propertyModule = 0;
+function leftHeadingInner() {
+  leftHeading[0].innerHTML = `${jsxProperty[propertyModule%3]} <span>PROPERTIES</span>`;
+  propertyModule++;
+}
 
 function banerHeadingAnimContainerFun() {
   timeLine[0].style.width = '100%';
@@ -31,6 +38,7 @@ function banerHeadingAnimContainerFun() {
       setTimeout(function () {
         timeLine[0].style.transition = 'all 6s ease';
         banerHeadingAnimContainer[0].style.transition = '0s';
+        leftHeadingInner();
         setTimeout(function () {
           banerHeadingAnimContainer[0].style.right = '0%';
           banerHeadingAnimContainer[0].style.width = '100%';
@@ -56,6 +64,39 @@ function sliderClassStartFun() {
   intervalStart();
 }
 
+// searchIconBox search bar
+var searchIconBox = document.getElementsByClassName('searchIconBox');
+var searchContentContainer = document.getElementsByClassName('searchContentContainer');
+var advancedContainer = document.getElementsByClassName('advancedContainer');
+
+var searchBoxSwitch = 0;
+var searchBoxFailSafe = 0;
+searchIconBox[0].addEventListener('click',()=>{
+  if (searchBoxFailSafe === 0) {
+    searchBoxFailSafe = 1;
+    if (searchBoxSwitch === 0) {
+      searchBoxSwitch = 1;
+      searchContentContainer[0].style.width = '73.898vw';
+      setTimeout(function () {
+        advancedContainer[0].style.height = '5vw';
+      }, 1000);
+    }else{
+      searchBoxSwitch = 0;
+      setTimeout(function () {
+        searchContentContainer[0].style.width = '0vw';
+      }, 500);
+      advancedContainer[0].style.height = '0vw';
+    }
+
+    setTimeout(function () {
+      searchBoxFailSafe = 0;
+    }, 1500);
+  }
+
+});
+
+
+
 window.addEventListener('load',()=>{
-  sliderClassStartFun()
+  sliderClassStartFun();
 });
