@@ -28,6 +28,11 @@ function leftHeadingInner() {
 
 function banerHeadingAnimContainerFun() {
   timeLine[0].style.width = '100%';
+  // blur text timeout
+  setTimeout(function () {
+    leftHeading[0].style.filter = 'blur(50px)';
+  }, 5000);
+
   setTimeout(function () {
     timeLine[0].style.transition = '0s';
     banerHeadingAnimContainer[0].style.width = '0';
@@ -43,6 +48,7 @@ function banerHeadingAnimContainerFun() {
           banerHeadingAnimContainer[0].style.right = '0%';
           banerHeadingAnimContainer[0].style.width = '100%';
           banerHeadingAnimContainer[0].style.transition = '0.8s';
+          leftHeading[0].style.filter = 'blur(0px)';
         }, 50);
       }, 50);
     }, 900);
@@ -54,6 +60,7 @@ function intervalStart(){
     banerHeadingAnimContainerFun();
   }, 8000);
 }
+
 
 function sliderClassStartFun() {
   banerHeadingAnimContainerFun();
@@ -68,6 +75,7 @@ function sliderClassStartFun() {
 var searchIconBox = document.getElementsByClassName('searchIconBox');
 var searchContentContainer = document.getElementsByClassName('searchContentContainer');
 var advancedContainer = document.getElementsByClassName('advancedContainer');
+var outerHolder = document.getElementsByClassName('outerHolder');
 
 var searchBoxSwitch = 0;
 var searchBoxFailSafe = 0;
@@ -75,6 +83,8 @@ searchIconBox[0].addEventListener('click',()=>{
   if (searchBoxFailSafe === 0) {
     searchBoxFailSafe = 1;
     if (searchBoxSwitch === 0) {
+      sliderContainerID.style.filter = 'blur(100px)';
+      outerHolder[0].style.filter = 'blur(100px)';
       searchBoxSwitch = 1;
       searchContentContainer[0].style.width = '73.898vw';
       setTimeout(function () {
@@ -82,17 +92,17 @@ searchIconBox[0].addEventListener('click',()=>{
       }, 1000);
     }else{
       searchBoxSwitch = 0;
+      sliderContainerID.style.filter = 'blur(0px)'
+      outerHolder[0].style.filter = 'blur(0px)'
       setTimeout(function () {
         searchContentContainer[0].style.width = '0vw';
       }, 500);
       advancedContainer[0].style.height = '0vw';
     }
-
     setTimeout(function () {
       searchBoxFailSafe = 0;
     }, 1500);
   }
-
 });
 
 

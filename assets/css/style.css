@@ -26,6 +26,7 @@ body{
 }
 
 .sliderContainerCSS{
+  transition: all 0.5s ease;
   position: absolute;
   width: 100%;
 }
@@ -52,6 +53,7 @@ body{
   animation-duration: 1s;
   animation-fill-mode: forwards;
   opacity: 0.8;
+  animation-timing-function: linear;
   -webkit-font-smoothing: subpixel-antialiased;
   will-change: transform;
 }
@@ -79,6 +81,7 @@ body{
   animation-fill-mode: forwards;
   -webkit-font-smoothing: subpixel-antialiased;
   will-change: transform;
+  animation-timing-function: linear;
 }
 
 @keyframes nthTwo {
@@ -99,12 +102,13 @@ body{
 }
 
 .outerHolder{
+  transition: all 0.6s ease;
   position: absolute;
   /* border: 1px solid black; */
   width: 69.3123vw;
   height: 24vw;
   left: 13.46246vw;
-  top: 23.535vw;
+  top: 25.535vw;
 }
 
 .banerHeadingAnimContainer{
@@ -121,7 +125,7 @@ body{
 .headingBox{
   padding: 0.1px;
   width: 67.3123vw;
-  height: 15.496vw;
+  height: 13.496vw;
   background: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 100%);
   color: white;
   margin-left: 2vw;
@@ -137,16 +141,19 @@ body{
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 2px;
-  background: red;
+  height: 3px;
+  background: #ff410b;
 }
 
 .leftHeading{
+  transition-delay: 1s;
+  transition: all 0.5s ease;
   position: relative;
   margin: 0;
   font-family: 'Lato-england';
   font-size: 15.4963vw;
-  margin-top: 1vw;
+  margin-top: -1vw;
+  margin-left: 1.9vw;
 }
 .leftHeading span{
   font-family: 'Lato-Regular';
@@ -290,7 +297,7 @@ nav a{
   position: relative;
   color: white;
   transition: all 0.6s ease;
-  font-size: 0.96852;
+  font-size: 0.96852vw;
   font-family: 'Lato-Regular';
   text-decoration: none;
   opacity: 0.8;
