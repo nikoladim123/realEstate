@@ -76,6 +76,9 @@ var searchIconBox = document.getElementsByClassName('searchIconBox');
 var searchContentContainer = document.getElementsByClassName('searchContentContainer');
 var advancedContainer = document.getElementsByClassName('advancedContainer');
 var outerHolder = document.getElementsByClassName('outerHolder');
+var blackOverlay = document.getElementsByClassName('blackOverlay');
+var searchNav = document.getElementsByClassName('searchNav');
+
 
 var searchBoxSwitch = 0;
 var searchBoxFailSafe = 0;
@@ -83,21 +86,34 @@ searchIconBox[0].addEventListener('click',()=>{
   if (searchBoxFailSafe === 0) {
     searchBoxFailSafe = 1;
     if (searchBoxSwitch === 0) {
+      searchBoxSwitch = 1;
+      searchNav[0].style.height = '7.7vw';
+      blackOverlay[0].style.opacity = '0.7';
       sliderContainerID.style.filter = 'blur(100px)';
       outerHolder[0].style.filter = 'blur(100px)';
-      searchBoxSwitch = 1;
-      searchContentContainer[0].style.width = '73.898vw';
+      searchContentContainer[0].style.width = '99.5vw';
+      searchContentContainer[0].style.right = '-16vw';
       setTimeout(function () {
-        advancedContainer[0].style.height = '5vw';
+        searchIconBox[0].style.top = '6vw';
+        searchIconBox[0].style.left = '4vw';
+        advancedContainer[0].style.height = '15vw';
+        searchContentContainer[0].style.top = '-4.6vw';
       }, 1000);
     }else{
       searchBoxSwitch = 0;
+      blackOverlay[0].style.opacity = '0';
       sliderContainerID.style.filter = 'blur(0px)'
       outerHolder[0].style.filter = 'blur(0px)'
-      setTimeout(function () {
-        searchContentContainer[0].style.width = '0vw';
-      }, 500);
+      searchContentContainer[0].style.top = '0vw';
       advancedContainer[0].style.height = '0vw';
+      searchIconBox[0].style.top = '0vw';
+      searchIconBox[0].style.left = '0vw';
+      setTimeout(function () {
+        searchNav[0].style.height = ' 6.39225vw';
+        searchContentContainer[0].style.width = '0vw';
+        searchContentContainer[0].style.right = '50%';
+      }, 500);
+
     }
     setTimeout(function () {
       searchBoxFailSafe = 0;
