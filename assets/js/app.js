@@ -30,7 +30,7 @@ function banerHeadingAnimContainerFun() {
   timeLine[0].style.width = '100%';
   // blur text timeout
   setTimeout(function () {
-    leftHeading[0].style.filter = 'blur(50px)';
+    leftHeading[0].style.filter = 'blur(17px)';
   }, 5000);
 
   setTimeout(function () {
