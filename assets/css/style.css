@@ -166,7 +166,48 @@ body{
 .rightHeading{
   margin: 0;
 }
-
+.wineDivSquare{
+  transform: rotate(45deg);
+  position: absolute;
+  border-radius: 1px;
+  background-color: rgba(87,214,207,.36);
+  width: 3.75vw;
+  height: 3.75vw;
+  border: 0.296vw solid rgba(255,213,69,0.17);
+  outline: 0.1482vw solid rgba(255,213,69,0.55);
+  margin-top: 42.977vw;
+  margin-left: 47.9%;
+  background-clip: content-box;
+}
+.wineTriangle{
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  border: 1.136vw solid transparent;
+  border-top: 1.136vw solid rgb(87,214,207);
+  transform: rotate(-45deg);
+  top: 2.272vw;
+  left: 2.272vw;
+  animation-name: wineTriangle;
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  animation-iteration-count:infinite;
+  /* top: 0.5vw; */
+  /* left: 0.5vw; */
+}
+@keyframes wineTriangle {
+  0%{
+    opacity: 1;
+    top: 2.272vw;
+    left: 2.272vw;
+  }
+  100%{
+    opacity: 0;
+    top: 0.5vw;
+    left: 0.5vw;
+  }
+}
 
 
 .searchContainer{
@@ -395,10 +436,12 @@ nav a:hover:after{
     outline: none;
 }
 .select-css option {
+  outline: none;
   display: flex;
   justify-content: center;
   font-weight:normal;
 }
+
 
 .selectWraper{
   width: 100%;
